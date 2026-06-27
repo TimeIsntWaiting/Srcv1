@@ -208,7 +208,7 @@ class ProgressManager:
             f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
             f"│ **__ETA:__** {eta_min:.2f} min\n"
             f"╰──────────────────╯\n\n"
-            f"**__Powered by Team SPY__**"
+            f"**__Powered by @shuklaBots__**"
         )
 
 class CaptionFormatter:
@@ -489,7 +489,7 @@ class SmartTelegramBot:
             if edit_msg:
                 await edit_msg.delete()
             
-            progress_message = await gf.send_message(user_id, "**__SpyLib ⚡ Uploading...__**")
+            progress_message = await gf.send_message(user_id, "**__shuklaLib ⚡ Uploading...__**")
             html_caption = await self.caption_formatter.markdown_to_html(caption)
             
             # Upload file using fast_upload
@@ -595,7 +595,7 @@ class SmartTelegramBot:
             if free_check == 1:
                 # Free user - send with protection
                 reply_markup = InlineKeyboardMarkup([[
-                    InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/kingofpatal")
+                    InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/maitrey")
                 ]])
                 await app.copy_message(target_chat_id, LOG_GROUP, result.id, protect_content=True, reply_markup=reply_markup)
             else:
@@ -713,7 +713,7 @@ class SmartTelegramBot:
                 msg_id = int(parts[-1]) + offset
             
             if chat_id in protected_channels:
-                await app.edit_message_text(sender, edit_id, "❌ This channel is protected by **Team SPY**.")
+                await app.edit_message_text(sender, edit_id, "❌ This channel is protected by **Shukla Bots**.")
                 return None, None
                 
             return chat_id, msg_id
